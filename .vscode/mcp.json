@@ -1,0 +1,12 @@
+{
+    "servers": {
+        "houdini": {
+            "command": "uv",
+            "args": [
+            "run",
+            "${workspaceFolder}/package/houdini-mcp/server/.venv/Scripts/python.exe",
+            "${workspaceFolder}/package/houdini-mcp/server/houdini_mcp_server.py"
+            ]
+        }
+    }
+}

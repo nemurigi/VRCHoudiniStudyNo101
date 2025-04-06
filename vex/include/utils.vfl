@@ -1,0 +1,3 @@
+float add_one(float x) {
+    return x + 1.0;
+}

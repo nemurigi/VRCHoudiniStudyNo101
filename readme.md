@@ -1,11 +1,12 @@
 # VRC Houdini勉強会 No.101 
 - コーディングエージェント以前の話としてvexとpythonをテキストエディタで書くためセットアップを紹介する
 - [Houdini Expr Editor](https://cgtoolbox.com/houdini-expression-editor/)
-    - vexを外部エディタで編集するためのアドオン
-    - 使用方法：右クリックして`Expression/Edit in External Editor`を選択 
+    - vexやpythonを外部エディタで編集するためのアドオン
+    - 使用方法：Expressionを右クリックして`Expression/Edit in External Editor`を選択 
     - 現在はSideFXLabsに同梱されているので個別にインストールする必要はない
-    - HoudiniExprEditorはテキストエディタで編集するためにtempファイルを作成している
-        - デフォルトだとその際のファイルの作成場所がOSのtempフォルダになっているので`$HIP/temp`に作成するように修正した 
+    - 自分は少しだけ改造している
+        - デフォルトだとtempファイル作成時にOSのtempフォルダに配置する
+        - それを`$HIP/temp`に配置するように改造
         ```python:ParmWatcher.py
         # TEMP_FOLDER = os.environ.get("EXTERNAL_EDITOR_TEMP_PATH",
         #                              tempfile.gettempdir())
@@ -26,7 +27,7 @@
     - `$HIP/vex/include`に.vflを配置するとwrangleから読み込める
         - ref [VEXで外部vflの読み込み](https://qiita.com/gupon/items/9f93c678cde0a6fcd479)
 - Python
-    - houモジュールの補完用の設定
+    - houモジュールの補完用の`settings.json`の設定
         - 普通のpythonを書きたいタイミングもあるのでworkspaceごと設定している
         - `C:/PROGRA~1\\SIDEEF~1\\HOUDIN~1.522`は各自の`$HFS`を指定
     ```json:settings.json
